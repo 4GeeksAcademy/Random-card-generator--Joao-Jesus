@@ -3,25 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Card Generator</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-  
   </head>
-  <body>
-    <div class="container-fluid text-center"></div>
-    <div class="row">
-      <div class="col-3">
-    <div id="card">
-      <div id="number" onclick="generateRandomCard();"></div>
-      <div class="cardClub onclick="generateRandomCard()"></div>
-      <div id="number" onclick="generateRandomCard()"></div>
+  <body onload="generateRandomCard()">
+    <div class="container-fluid text-center">
+      <div id="card">
+        <div id="cardClub"></div>
+        <h1 id="CardNumber"></h1>
+        <div id="cardClub"></div>
+      </div>
     </div>
-  </div>
-  </div>
   </body>
 </html>
