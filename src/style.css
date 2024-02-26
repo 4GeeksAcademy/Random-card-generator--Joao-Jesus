@@ -17,8 +17,8 @@ body {
   padding: 50px;
   padding-top: 60px;
   position: relative;
-  width: 200px;
-  height: 400px;
+  width: 150px;
+  height: 300px;
   font-size: 80px;
   flex-direction: column;
   justify-content: center;
@@ -59,4 +59,11 @@ body {
     content: "\2665";
     color: red;
   }
+}
+
+.cardBtn {
+  display: inline-block;
+  height: 20px;
+  width: 100px;
+  position: relative;
 }

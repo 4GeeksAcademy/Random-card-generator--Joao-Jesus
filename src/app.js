@@ -2,13 +2,38 @@
 
 import "./style.css";
 
+// Wait for the window to load before executing the code
 window.onload = () => {
-  document.querySelector(".card").classList.add(generateRandomClub());
-  document.querySelector(".card").innerHTML = generateRandomCard();
+  setTimeout(() => {
+    const cardElement = document.querySelector(".card");
+    cardElement.classList.remove("spade", "diamond", "heart", "club");
+    cardElement.classList.add(generateRandomClub());
+    cardElement.innerHTML = generateRandomCard();
+  }, 1000 * 1);
+  // Select the card element and add a random club class
+  const cardElement = document.querySelector(".card");
+  cardElement.classList.add(generateRandomClub());
+
+  // Set the inner HTML of the card element to a random card
+  cardElement.innerHTML = generateRandomCard();
+
+  // Get the button element and add an event listener to generate a new card on click
+  const generateBtn = document.querySelector(".cardBtn");
+  generateBtn.addEventListener("click", newGenerateCard);
 };
-/// function random number
+
+// Function to generate a new card on button click
+let newGenerateCard = () => {
+  // Select the card element and update its club class and inner HTML
+  const cardElement = document.querySelector(".card");
+  cardElement.classList.remove("spade", "diamond", "heart", "club");
+  cardElement.classList.add(generateRandomClub());
+  cardElement.innerHTML = generateRandomCard();
+};
+
+// Function to generate a random card
 let generateRandomCard = () => {
-  /// Arrays of numcards
+  // Array of card numbers
   let cardNum = [
     "A",
     "2",
@@ -24,16 +49,22 @@ let generateRandomCard = () => {
     "Q",
     "K"
   ];
-  /// array of clubcard
 
+  // Get a random index from the cardNum array
   let randomNum = Math.floor(Math.random() * cardNum.length);
+
+  // Return the randomly selected card number
   return cardNum[randomNum];
 };
 
-/// function random clubcards
+// Function to generate a random club class
 let generateRandomClub = () => {
-  /// array of clubcard
+  // Array of club classes
   let arrClub = ["spade", "diamond", "heart", "club"];
+
+  // Get a random index from the arrClub array
   let randomClub = Math.floor(Math.random() * arrClub.length);
+
+  // Return the randomly selected club class
   return arrClub[randomClub];
 };
