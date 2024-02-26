@@ -1,22 +1,54 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 body {
   background-color: rgba(12, 165, 12, 0.849);
-  border: solid 2 px black;
+
+  box-sizing: border-box;
 }
-#card {
-  border: solid 2 px black;
-  height: 7500px;
-  width: 600px;
+.card {
+  display: inline-block;
+  margin: auto;
+  border: 2px solid black;
   background-color: white;
-}
+  border-radius: 5px;
+  padding: 20px;
+  padding-top: 20px;
+  position: relative;
+  width: 250px;
+  height: 400px;
+  font-size: 80px;
 
-#cardNumber {
-  color: black;
-}
-
-#cardClub {
-  color: red;
-
-  width: 15px;
-  height: 15px;
+  .cardClub-top {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 20px;
+    left: 20px;
+    font-size: 80px;
+  }
+  .cardClub-bottom {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 80px;
+  }
+  &.spade:before,
+  &.spade:after {
+    content: "\2660";
+  }
+  &.club:before,
+  &.club:after {
+    content: "\2663";
+  }
+  &.diamond:before,
+  &.diamond:after {
+    content: "\2666";
+    color: red;
+  }
+  &.heart:before,
+  &.heart:after {
+    content: "\2665";
+    color: red;
+  }
 }

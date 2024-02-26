@@ -1,44 +1,39 @@
 /* eslint-disable */
-import "bootstrap";
+
 import "./style.css";
 
-window.onload = function generateRandomCard() {
+window.onload = () => {
+  document.querySelector(".card").classList.add(generateRandomClub());
+  document.querySelector(".card").innerHTML = generateRandomCard();
+};
+/// function random number
+let generateRandomCard = () => {
   /// Arrays of numcards
-  let cardNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-
-  /// function o random number
-  addEventListener("refresh", function() {
-    let randomNum = cardNum.Math.floor(Math.random() * 12 + 1);
-    let number = document.getElementById("cardNumber");
-    if (randomNum === 1) {
-      number.innerHTML("A");
-    } else if (randomNum === 12) {
-      number = "K";
-    } else if (randomNum === 11) {
-      number = "Q";
-    } else if (randomNum === 10) {
-      number = "J";
-    } else {
-      number === randomNum;
-    }
-    number.innerHTML = "number";
-  });
-
+  let cardNum = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
   /// array of clubcard
-  let arrClub = ["spades", "diamond", "heart", "club"];
 
-  /// function random clubcards
-  addEventListener("refresh", function() {
-    let randomClub = arrClub.Math.floor(Math.random() * 4 + 1);
-    if (randomClub === 1) {
-      club = "♥";
-    } else if (randomClub === 2) {
-      club = "♣";
-    } else if (randomClub === 3) {
-      club = "♠";
-    } else randomClub === 4;
-    club = "♦";
-  });
-  let club = document.getElementById("cardClub");
-  club.innerHTML = "";
+  let randomNum = Math.floor(Math.random() * cardNum.length);
+  return cardNum[randomNum];
+};
+
+/// function random clubcards
+let generateRandomClub = () => {
+  /// array of clubcard
+  let arrClub = ["spade", "diamond", "heart", "club"];
+  let randomClub = Math.floor(Math.random() * arrClub.length);
+  return arrClub[randomClub];
 };
